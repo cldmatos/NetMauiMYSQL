@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrabalhoMauiSQL.Acampa"
+             BackgroundColor="black"
+             Title="Acampamentos">
+    <VerticalStackLayout>
+        <Label 
+            Text="ACAMPAMENTOS"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Nome do Grupo" />
+        <Entry x:Name="txtGrupos" Keyboard="Text" />
+        <Label Text="Descrição do Grupo" />
+        <Entry x:Name="txtDetalhe" Keyboard="Text" />
+
+        <Button Text="Adicionar Grupo" Clicked="btnAdicionar" />
+
+        <ListView x:Name="lstGrupos" 
+                  HasUnevenRows="True"
+                  VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding grupo}" 
+                                   FontSize="Medium" 
+                                   HorizontalOptions="Start" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Label Text="" x:Name="lblStatus" VerticalOptions="End" HorizontalTextAlignment="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>
